@@ -10,15 +10,23 @@ public class FileOperations {
 		return file;
 	}
 	
-	public static void rm(File file){
+	public static boolean rm(File file){
 		if(file != null && file.exists()){
-			file.delete();
+			return file.delete();
 		}
+		return false;
 	}
 	
-	public static void rename(File file,String name){
+	public boolean rename(File file,String name){
 		if(file != null && file.exists()){
-			file.renameTo(new File(file.getParent()+name));
+			return file.renameTo(new File(file.getParent()+name));
 		}
+		return false;
+	}
+	
+	public static boolean create(File file) throws IOException{
+		if(!file.exists())
+			return file.createNewFile();
+		return false;
 	}
 }

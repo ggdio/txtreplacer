@@ -110,7 +110,6 @@ public class TxtReplacer {
 				writer.newLine();
 			}
 		}
-		System.out.println(content);
 	}
 	
 	/**
